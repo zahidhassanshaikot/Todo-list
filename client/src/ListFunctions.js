@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getList=()=>{
     return axios
-        .get(`http://localhost:8000/api/task`,{
+        .get(`/api/task`,{
         headers:{'Content-Type':'application/json'}
     })
     .then(res=>{
@@ -12,7 +12,7 @@ export const getList=()=>{
 
 export const addItem=title=>{
     return axios
-        .post(`http://localhost:8000/api/task`,
+        .post(`/api/task`,
         {
             title: title
         },
@@ -29,7 +29,7 @@ export const addItem=title=>{
 }
 
 export const deleteItem=id=>{
-    axios.delete(`http://localhost:8000/api/task/${id}`,
+    axios.delete(`/api/task/${id}`,
         
         {
             headers:{'Content-Type':'application/json'}
@@ -45,7 +45,7 @@ export const deleteItem=id=>{
 
 export const updateItem=(title,id)=>{
     return axios
-        .put(`http://localhost:8000/api/task/${id}`,
+        .put(`/api/task/${id}`,
         {
             title: title
         },
